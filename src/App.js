@@ -214,7 +214,7 @@ const MovieDetails = ({
       setIsLoading(true);
       try {
         const response = await fetch(
-          `http://www.omdbapi.com/?apikey=${key}&i=${selectedID}`
+          `https://www.omdbapi.com/?apikey=${key}&i=${selectedID}`
         );
         const data = await response.json();
         setMovie(data);
