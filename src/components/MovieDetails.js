@@ -23,9 +23,11 @@ export const MovieDetails = ({
   }, [userRating]);
 
   const isWatched = watched.map((mov) => mov.imdbID).includes(selectedID);
+
   const watchedUserRating = watched.find(
     (mov) => mov.imdbID === selectedID
   )?.userRating;
+
   const {
     Title: title,
     Year: year,
@@ -60,13 +62,12 @@ export const MovieDetails = ({
   useEffect(() => {
     if (!title) return;
 
-    document.title = `Movie | ${title}`;
+    document.title = `📽️ | ${title}`;
 
     return () => {
       document.title = "🍿 usePopcorn";
     };
   }, [title]);
-
   useKey("Escape", onCloseMovie);
 
   const handleAdd = () => {
